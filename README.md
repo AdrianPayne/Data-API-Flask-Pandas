@@ -4,7 +4,39 @@ From two .csv files (the first file contains offline brushing data of all partic
 toothbrushing study while the second one allocates the participants into groups), the tasks
 is to extract information for each participant (identified by their PlaybrushID) and provide meaningful
 information that can be communicated to the user via a newsletter.
-### Example of input & output
+
+## WEB APP
+### Local deploy
+>docker-compose build && docker-compose up 
+
+url: localhost:5000
+
+### Web documentation
+Only one resource 
+>'/'
+#### Method GET
+Form with two csv file inputs:
++ rawdata
++ groups
+
+Post submit button
+#### Method POST
+Print user and group week statistical data tables
+
+### Design considerations
+As web app requirements are simple and short, these tools has been used:
++ Back: Flask
++ Front: Jinja2 templates (provided by Flask)
++ Docker to encapsulate and install the requirements
++ Even though only one service is launched, Docker-Compose to eliminate repetitive and mundane configuration tasks
+
+### Next steps
++ Automatic deploy system with Circleci
++ CSS style
++ Plot figures
+
+## DATA TASKS
+#### Example of input & output
     -INPUT-
     RAWDATA
     PlaybrushID,TimestampUTC,UpTime,DownTime,LeftTime,RightTime,NoneTime,
@@ -25,7 +57,7 @@ information that can be communicated to the user via a newsletter.
     # Task 2 - Group Dynamics
     group, total-brushes, avg-brushes, avg-brush-time, score-performance
 
-## Results
+### Results
     Task 1
     group,PBID,mon,tue,wed,thu,fri,sat,sun,total-brushes,twice-brushes,avg-brush-time
     A,PB2500008778,0,0,1,1,0,0,1,3,0,37.05
@@ -131,15 +163,15 @@ information that can be communicated to the user via a newsletter.
     A,62,45.40,2.95,134.05
 
 
-## Test in local
+### Execute in local
 + Create a virtual environment 
     > python3 -m venv /path/to/new/virtual/env
 + Install project dependencies 
-    >pip install -r requirements.txt
+    >pip install -r playbrush_api/requirements.txt
 + Execute task.py
-    >python3 tasks.py
+    >python3 data_tasks.py
 
-## Design considerations
+### Design considerations
 + Python 3.7.7
 + Use of Pandas and Numpy libraries because include cleaning, transforming, manipulating and analyzing data 
 efficient methods
@@ -147,15 +179,3 @@ efficient methods
 +  For question:
     >Which group performed the best?
     + The option that does not penalize for the number of members within each group has been selected, the result of multiplying the brushing averages and time per brushing per user
-
-## Next steps (Task 3 [Optional]: Make the code reusable and accessible)
-+ Create Flask API with two views:
-    + '/' method GET -> HTML form to upload .csv files and submit button
-    + '/' method POST -> Process .csv submitted and show HTML table with week statistics
-+ Encapsulate in a Docker/ Docker-Compose for dependencies control
-+ Deploy in AWS (EC2 service)
-
-More possibilities:
-+ For resource '/' method POST: show also some plots about statistic
-+ CSS style
-+ Create MongoDB Docker service to include statistics store?

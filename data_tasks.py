@@ -1,4 +1,4 @@
-from brush_stats import week_stats
+from playbrush_api.brush_stats import week_stats
 
 if __name__ == "__main__":
 
