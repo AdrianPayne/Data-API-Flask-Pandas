@@ -32,7 +32,6 @@ As web app requirements are simple and short, these tools has been used:
 + GitHub actions to automate deployment in AWS ECR/ECS services (EC2 instance)
 
 ### Next steps
-+ Automatic deploy system with Circleci
 + CSS style
 + Plot figures
 
