@@ -21,20 +21,15 @@ Form with two csv file inputs:
 
 Post submit button
 
-![image](https://user-images.githubusercontent.com/8972362/118098003-ac974c00-b3d3-11eb-86df-76650d1e55fe.png)
-
 #### Method POST
 Print user and group week statistical data tables
-
-![image](https://user-images.githubusercontent.com/8972362/118098106-c9cc1a80-b3d3-11eb-8a0b-460c591e724f.png)
-![image](https://user-images.githubusercontent.com/8972362/118098145-d5b7dc80-b3d3-11eb-8841-7c702150d3a3.png)
 
 ### Design considerations
 As web app requirements are simple and short, these tools has been used:
 + Back: Flask
 + Front: Jinja2 templates (provided by Flask)
 + Docker to encapsulate and install the requirements
-+ Even though only one service is launched, Docker-Compose to eliminate repetitive and mundane configuration tasks
++ GitHub actions to automate deployment in AWS ECR/ECS services (EC2 instance)
 
 ### Next steps
 + Automatic deploy system with Circleci
