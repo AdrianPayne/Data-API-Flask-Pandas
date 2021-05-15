@@ -6,14 +6,17 @@ is to extract information for each participant (identified by their PlaybrushID)
 information that can be communicated to the user via a newsletter.
 
 ## WEB APP
+### AWS url
+http://3.17.77.92:32768/
+
 ### Local deploy
 >docker-compose build && docker-compose up 
-
 url: localhost:5000
 
 ### Web documentation
 Only one resource 
 >'/'
+
 #### Method GET
 Form with two csv file inputs:
 + rawdata
@@ -34,6 +37,7 @@ As web app requirements are simple and short, these tools has been used:
 ### Next steps
 + CSS style
 + Plot figures
++ Test suit!!!!!
 
 ## DATA TASKS
 #### Example of input & output
