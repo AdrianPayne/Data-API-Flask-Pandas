@@ -32,7 +32,7 @@ As web app requirements are simple and short, these tools has been used:
 + Back: Flask
 + Front: Jinja2 templates (provided by Flask)
 + Docker to encapsulate and install the requirements
-+ GitHub actions to automate deployment in AWS ECR/ECS services (EC2 instance)
++ GitHub actions to automate deployment in AWS ECR/ECS services (EC2 instance). Deployed with each new release!
 
 ### Next steps
 + CSS style
